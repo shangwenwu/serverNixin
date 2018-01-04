@@ -1,7 +1,7 @@
 module.exports = {
   index: async (ctx, next) => {
     await ctx.render("home/index", {
-      title: "泥信 - 来自田地的一封信！"
+      title: "node koa mysql"
     })
   },
   saveProduct: async (ctx, next) => {
