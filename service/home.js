@@ -42,7 +42,7 @@ module.exports = {
     return res;
   },
   saveUserInfo:async function(params){
-    let res = await query('INSERT INTO supply(name,mobile,address,photo,nick_name,greenhouse_num,greenhouse_img,product_id,user_level,certificate,share_land_id,picking_id,create_time) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', params).then(result => {
+    let res = await query('INSERT INTO supply SET ?', params).then(result => {
       return {
         status: 1,
         data: result.insertId
