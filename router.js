@@ -8,6 +8,16 @@ module.exports = (app) => {
 	//保存产品
 	router.post('/saveProduct', app.controller.home.saveProduct)
 
+	//保存用户信息
+	router.post('/saveUserInfo', app.controller.home.saveUserInfo)
+
+	//查找用户
+	router.post('/findUserName', app.controller.home.findUserName)
+
+	
+
+	
+
 	app.use(router.routes())
 		.use(router.allowedMethods())
 }

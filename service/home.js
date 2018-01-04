@@ -40,6 +40,35 @@ module.exports = {
       };
     });
     return res;
+  },
+  saveUserInfo:async function(params){
+    let res = await query('INSERT INTO supply(name,mobile,address,photo,nick_name,greenhouse_num,greenhouse_img,product_id,user_level,certificate,share_land_id,picking_id,create_time) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', params).then(result => {
+      return {
+        status: 1,
+        data: result.insertId
+      };
+    }).catch(err => {
+      return {
+        status: 0,
+        data: err
+      };
+    });
+    return res;
+  },
+  findUserName:async function(userName){
+    let _sql = `SELECT * from supply where nick_name="${userName}"`;
+    let res = await query(_sql).then(result => {
+      return {
+        status: 1,
+        data: result
+      };
+    }).catch(err => {
+      return {
+        status: 0,
+        data: err
+      };
+    });
+    return res;
   }
 
 }

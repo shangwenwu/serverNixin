@@ -16,5 +16,14 @@ module.exports = {
     } = ctx.request.body;
     let res = await app.service.home.saveProduct(name, user, age);
     ctx.response.body = res;
+  },
+  saveUserInfo:async(ctx,next)=>{
+    let res = await ctx.app.service.home.saveUserInfo(ctx.request.body);
+    ctx.response.body = res;
+  },
+  findUserName: async (ctx, next) => {
+    let {nickName} = ctx.request.body;
+    let res = await ctx.app.service.home.findUserName(ctx.request.body);
+    ctx.response.body = res;
   }
 }
