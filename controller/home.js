@@ -22,7 +22,6 @@ module.exports = {
     ctx.response.body = res;
   },
   findUserName: async (ctx, next) => {
-    let {nickName} = ctx.request.body;
     let res = await ctx.app.service.home.findUserName(ctx.request.body);
     ctx.response.body = res;
   }
