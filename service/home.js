@@ -56,7 +56,7 @@ module.exports = {
     return res;
   },
   findUserName:async function(userName){
-    let _sql = `SELECT * from supply where nick_name=??`;
+    let _sql = `SELECT * from supply where ?`;
     let res = await query(_sql, {nick_name:userName}).then(result => {
       return {
         status: 1,
