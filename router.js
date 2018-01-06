@@ -8,8 +8,6 @@ module.exports = (app) => {
 	/*
 	 *  操作 supply 数据表
 	 */
-	//保存产品
-	router.post('/saveProduct', app.controller.home.saveProduct)
 	//保存用户信息
 	router.post('/saveUserInfo', app.controller.home.saveUserInfo)
 	//查找用户
