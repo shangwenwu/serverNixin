@@ -72,7 +72,7 @@ module.exports = {
   },
   addProductId: async function (updataProduct) {
     let _sql = `UPDATE supply SET product_id = ? WHERE id = ?`;
-    let res = await query(_sql, updataProduct).then(result => {
+    let res = await query(_sql, [updataProduct.product_id, updataProduct.id]).then(result => {
       return {
         status: 1,
         data: result.affectedRows
