@@ -14,6 +14,9 @@ module.exports = (app) => {
 	//查找用户
 	router.post('/findUserName', app.controller.home.findUserName)
 
+	//添加产品
+	router.post('/addProductId', app.controller.home.addProductId)
+
 	
 
 	

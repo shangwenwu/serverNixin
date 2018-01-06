@@ -69,6 +69,21 @@ module.exports = {
       };
     });
     return res;
+  },
+  addProductId: async function (updataProduct) {
+    let _sql = `UPDATE supply SET product_id = ? WHERE id = ?`;
+    let res = await query(_sql, updataProduct).then(result => {
+      return {
+        status: 1,
+        data: result.affectedRows
+      };
+    }).catch(err => {
+      return {
+        status: 0,
+        data: err
+      };
+    });
+    return res;
   }
 
 }
