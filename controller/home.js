@@ -4,19 +4,6 @@ module.exports = {
       title: "node koa mysql"
     })
   },
-  saveProduct: async (ctx, next) => {
-    let params = ctx.request.body;
-    const {
-      app
-    } = ctx;
-    let {
-      name,
-      user,
-      age
-    } = ctx.request.body;
-    let res = await app.service.home.saveProduct(name, user, age);
-    ctx.response.body = res;
-  },
   saveUserInfo:async(ctx,next)=>{
     let res = await ctx.app.service.home.saveUserInfo(ctx.request.body);
     ctx.response.body = res;
