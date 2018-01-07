@@ -18,7 +18,7 @@ module.exports = {
     },
     queryUserOneProductList: async function (params) {
         let _sql = `SELECT * FROM nixin8.trace_info where product_id=? and supply_id=? ORDER BY create_time asc`
-        let res = await query(_sql, params).then(result => {
+        let res = await query(_sql, [params.product_id, params.supply_id]).then(result => {
             return {
                 status: 1,
                 data: result

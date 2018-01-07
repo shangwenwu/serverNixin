@@ -22,7 +22,7 @@ module.exports = (app) => {
 	//保存产品追溯信息
 	router.post('/insertTraceInfo', app.controller.traceInfo.insertTraceInfo)
 	//查询用户的单个产品列表
-	router.post('queryUserOneProductList', app.controller.traceInfo.queryUserOneProductList)
+	router.post('/queryUserOneProductList', app.controller.traceInfo.queryUserOneProductList)
 	
 
 	
