@@ -15,6 +15,21 @@ module.exports = {
         };
         });
         return res;
+    },
+    queryUserOneProductList: async function (params) {
+        let _sql = `SELECT * FROM nixin8.trace_info where product_id=? and supply_id=? ORDER BY create_time asc`
+        let res = await query(_sql, params).then(result => {
+            return {
+                status: 1,
+                data: result
+            };
+        }).catch(err => {
+            return {
+                status: 0,
+                data: err
+            };
+        });
+        return res;
     }
-
+    
 }
