@@ -17,10 +17,11 @@ module.exports = {
         return res;
     },
     queryUserOneProductList: async function (params) {
+        let _sql='';
         if(params.desc){
-            let _sql = `SELECT * FROM nixin8.trace_info where product_id=? and supply_id=? ORDER BY create_time desc`
+            _sql = `SELECT * FROM nixin8.trace_info where product_id=? and supply_id=? ORDER BY create_time desc`
         }else{
-            let _sql = `SELECT * FROM nixin8.trace_info where product_id=? and supply_id=? ORDER BY create_time asc`
+            _sql = `SELECT * FROM nixin8.trace_info where product_id=? and supply_id=? ORDER BY create_time asc`
         }
         let res = await query(_sql, [params.product_id, params.supply_id]).then(result => {
             return {
