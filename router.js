@@ -23,6 +23,17 @@ module.exports = (app) => {
 	router.post('/insertTraceInfo', app.controller.traceInfo.insertTraceInfo)
 	//查询用户的单个产品列表
 	router.post('/queryUserOneProductList', app.controller.traceInfo.queryUserOneProductList)
+
+
+	/*
+	 *  操作 sales 数据表
+	 */
+	//保存 预计销售产品
+	router.post('/insertSalesInfo', app.controller.sales.insertSalesInfo)
+	//删除 预计销售产品
+	router.post('/deleteSalesInfo', app.controller.sales.deleteSalesInfo)
+	//查询 预计销售产品
+	router.post('/querySalesInfo', app.controller.sales.querySalesInfo)
 	
 
 	
