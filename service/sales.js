@@ -17,8 +17,8 @@ module.exports = {
         return res;
     },
     deleteSalesInfo: async function (params) {
-        let _sql = `DELETE FROM sales where ?`;
-        let res = await query(_sql, params).then(result => {
+        let _sql = `DELETE FROM sales where product_id=? and supply_id=?`;
+        let res = await query(_sql, [params.product_id, params.supply_id]).then(result => {
             return {
                 status: 1,
                 data: result
