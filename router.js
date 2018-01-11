@@ -34,6 +34,17 @@ module.exports = (app) => {
 	router.post('/deleteSalesInfo', app.controller.sales.deleteSalesInfo)
 	//查询 预计销售产品
 	router.post('/querySalesInfo', app.controller.sales.querySalesInfo)
+
+
+	/*
+	 *  操作 picking 数据表
+	 */
+	//保存 采摘信息
+	router.post('/insertPickingInfo', app.controller.picking.insertPickingInfo)
+	//删除 采摘信息
+	router.post('/deletePickingInfo', app.controller.picking.deletePickingInfo)
+	//查询 采摘信息
+	router.post('/queryPickingInfo', app.controller.picking.queryPickingInfo)
 	
 
 	
