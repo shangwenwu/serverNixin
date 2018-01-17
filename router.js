@@ -45,6 +45,29 @@ module.exports = (app) => {
 	router.post('/deletePickingInfo', app.controller.picking.deletePickingInfo)
 	//查询 采摘信息
 	router.post('/queryPickingInfo', app.controller.picking.queryPickingInfo)
+
+
+	/*
+	 *  操作 team 数据表
+	 */
+	//保存 采摘信息
+	router.post('/insertTeamInfo', app.controller.team.insertTeamInfo)
+	//删除 采摘信息
+	router.post('/deleteTeamInfo', app.controller.team.deleteTeamInfo)
+	//查询 采摘信息
+	router.post('/queryTeamInfo', app.controller.team.queryTeamInfo)
+
+
+
+	/*
+	 *  操作 supply_team 商户与团队关联表 数据表   
+	 */
+	//保存 采摘信息
+	router.post('/insertSupplyTeamInfo', app.controller.supplyTeam.insertSupplyTeamInfo)
+	//删除 采摘信息
+	router.post('/deleteSupplyTeamInfo', app.controller.supplyTeam.deleteSupplyTeamInfo)
+	//查询 采摘信息
+	router.post('/querySupplyTeamInfo', app.controller.supplyTeam.querySupplyTeamInfo)
 	
 
 	
