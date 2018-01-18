@@ -16,6 +16,20 @@ module.exports = {
     });
     return res;
   },
+  updateUserInfo: async function (params) {
+    let res = await query('UPDATE supply SET ? WHERE Id = ?', [params.data, params.id]).then(result => {
+      return {
+        status: 1,
+        data: result.insertId
+      };
+    }).catch(err => {
+      return {
+        status: 0,
+        data: err
+      };
+    });
+    return res;
+  },
   findUserName:async function(userNameObj){
     let _sql = `SELECT * from supply where ?`;
     let res = await query(_sql, userNameObj).then(result => {
