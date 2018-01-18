@@ -23,7 +23,7 @@ module.exports = {
     //   sql += (key+' = ? ');
     //   arr.push();
     // };
-    let res = await query('UPDATE supply SET ? WHERE Id = ?', params.data, params.id).then(result => {
+    let res = await query('UPDATE supply SET ? WHERE Id = ?', Object.assign({},params.data), params.id).then(result => {
       return {
         status: 1,
         data: result.insertId

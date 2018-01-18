@@ -10,7 +10,7 @@ module.exports = (app) => {
 	 */
 	//保存用户信息
 	router.post('/saveUserInfo', app.controller.home.saveUserInfo)
-	//更新用户信息
+	//更新用户信息 
 	router.post('/updateUserInfo', app.controller.home.updateUserInfo)
 	//查找用户
 	router.post('/findUserName', app.controller.home.findUserName)
