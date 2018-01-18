@@ -17,7 +17,13 @@ module.exports = {
     return res;
   },
   updateUserInfo: async function (params) {
-    let res = await query('UPDATE supply SET ? WHERE Id = ?', [params.data, params.id]).then(result => {
+    let arr = [];
+    let sql = 'UPDATE supply SET ';
+    for (let key in params.data){
+      sql += (key+' = ? ');
+      arr.push();
+    };
+    let res = await query('UPDATE supply SET ? WHERE Id = ?', params.data, params.id).then(result => {
       return {
         status: 1,
         data: result.insertId
