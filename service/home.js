@@ -29,7 +29,7 @@ module.exports = {
     let res = await query(sql, arr).then(result => {
       return {
         status: 1,
-        data: result.insertId
+        data: result.affectedRows
       };
     }).catch(err => {
       return {
