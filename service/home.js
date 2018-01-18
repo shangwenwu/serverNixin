@@ -25,6 +25,7 @@ module.exports = {
     };
     sql = sql.substr(0, sql.length - 1);
     sql += 'WHERE Id = ?';
+    arr.push(params.id);
     let res = await query(sql, arr).then(result => {
       return {
         status: 1,
