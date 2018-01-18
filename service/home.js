@@ -17,13 +17,15 @@ module.exports = {
     return res;
   },
   updateUserInfo: async function (params) {
-    // let arr = [];
-    // let sql = 'UPDATE supply SET ';
-    // for (let key in params.data){
-    //   sql += (key+' = ? ');
-    //   arr.push();
-    // };
-    let res = await query('UPDATE supply SET ? WHERE Id = ?', Object.assign({},params.data), params.id).then(result => {
+    let arr = [];
+    let sql = 'UPDATE supply SET ';
+    for (let key in params.data){
+      sql += (key+' = ? ,');
+      arr.push(params.data[key]);
+    };
+    sql = sql.substr(0, sql.length - 1);
+    sql += 'WHERE Id = ?';
+    let res = await query(sql, arr).then(result => {
       return {
         status: 1,
         data: result.insertId

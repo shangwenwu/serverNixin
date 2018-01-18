@@ -8,14 +8,13 @@ var pool = mysql.createPool({
   database: 'nixin8'
 });
 
-let query = function (sql, values1, values2) {
+let query = function (sql, values) {
   return new Promise((resolve, reject) => {
     pool.getConnection(function(err, connection) {
       if (err) {
         resolve(err)
       } else {
-        if (values2){
-          connection.query(sql, values1, values2, (err, rows) => {
+          connection.query(sql, values, (err, rows) => {
             if (err) {
               reject(err)
             } else {
@@ -23,17 +22,6 @@ let query = function (sql, values1, values2) {
             }
             connection.release();
           })
-        }else{
-          connection.query(sql, values1, (err, rows) => {
-            if (err) {
-              reject(err)
-            } else {
-              resolve(rows)
-            }
-            connection.release();
-          })
-        }
-        
       }
     })
   });
