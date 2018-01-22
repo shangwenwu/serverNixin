@@ -11,6 +11,10 @@ module.exports = {
     queryTeamInfo: async (ctx, next) => {
         let res = await ctx.app.service.team.queryTeamInfo(ctx.request.body);
         ctx.response.body = res;
+    },
+    queryTeamAllInfo: async (ctx, next) => {
+        let res = await ctx.app.service.team.queryTeamAllInfo(ctx.request.body);
+        ctx.response.body = res;
     }
   
 

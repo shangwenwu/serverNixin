@@ -45,6 +45,21 @@ module.exports = {
             };
         });
         return res;
+    },
+    queryTeamAllInfo: async function (params) {
+        let _sql = `SELECT * FROM team ORDER BY create_time desc;`;
+        let res = await query(_sql).then(result => {
+            return {
+                status: 1,
+                data: result
+            };
+        }).catch(err => {
+            return {
+                status: 0,
+                data: err
+            };
+        });
+        return res;
     }
     
 }

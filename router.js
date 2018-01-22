@@ -58,7 +58,9 @@ module.exports = (app) => {
 	router.post('/deleteTeamInfo', app.controller.team.deleteTeamInfo)
 	//查询 采摘信息
 	router.post('/queryTeamInfo', app.controller.team.queryTeamInfo)
-
+	//查询 所有信息
+	router.post('/queryTeamAllInfo', app.controller.team.queryTeamAllInfo)
+	
 
 
 	/*
