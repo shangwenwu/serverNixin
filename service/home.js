@@ -56,7 +56,7 @@ module.exports = {
   },
   // 获取没有加入团队 没有创建团队 并完善过信息的用户
   queryNoTeamList: async function () {
-    let _sql = `SELECT * FROM nixin8.supply where mobile != '' and management_team != '' and join_team != '';`;
+    let _sql = `SELECT * FROM nixin8.supply where mobile != '' and (join_team IS NULL or join_team='') and (management_team is null or management_team = '' )`;
     let res = await query(_sql).then(result => {
       return {
         status: 1,
