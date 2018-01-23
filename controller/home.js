@@ -16,6 +16,10 @@ module.exports = {
     let res = await ctx.app.service.home.findUserName(ctx.request.body);
     ctx.response.body = res;
   },
+  queryNoTeamList: async (ctx, next) => {
+    let res = await ctx.app.service.home.queryNoTeamList(ctx.request.body);
+    ctx.response.body = res;
+  },
   addProductId: async (ctx, next) => {
     let res = await ctx.app.service.home.addProductId(ctx.request.body);
     ctx.response.body = res;

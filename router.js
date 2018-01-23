@@ -14,6 +14,8 @@ module.exports = (app) => {
 	router.post('/updateUserInfo', app.controller.home.updateUserInfo)
 	//查找用户
 	router.post('/findUserName', app.controller.home.findUserName)
+	//没有团队的所有成员
+	router.post('/queryNoTeamList', app.controller.home.queryNoTeamList)
 	//新增产品到用户信息
 	router.post('/addProductId', app.controller.home.addProductId)
 

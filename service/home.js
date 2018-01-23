@@ -39,9 +39,25 @@ module.exports = {
     });
     return res;
   },
-  findUserName:async function(userNameObj){
+  findUserName: async function (userNameObj) {
     let _sql = `SELECT * from supply where ?`;
     let res = await query(_sql, userNameObj).then(result => {
+      return {
+        status: 1,
+        data: result
+      };
+    }).catch(err => {
+      return {
+        status: 0,
+        data: err
+      };
+    });
+    return res;
+  },
+  // 获取没有加入团队 没有创建团队 并完善过信息的用户
+  queryNoTeamList: async function () {
+    let _sql = `SELECT * FROM nixin8.supply where mobile != '' and management_team != '' and join_team != '';`;
+    let res = await query(_sql).then(result => {
       return {
         status: 1,
         data: result
